@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="tick-tracker.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.12598564"
+     inkscape:cx="277.80945"
+     inkscape:cy="-1142.9874"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient14"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="0"
+         id="stop13" />
+      <stop
+         style="stop-color:#5e5e5e;stop-opacity:1;"
+         offset="0.79635382"
+         id="stop17" />
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="1"
+         id="stop14" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient8"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="0"
+         id="stop8" />
+      <stop
+         style="stop-color:#7d7d7d;stop-opacity:1;"
+         offset="0.80398774"
+         id="stop16" />
+      <stop
+         style="stop-color:#333333;stop-opacity:1;"
+         offset="1"
+         id="stop9" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#4eaf92;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#8bbcad;stop-opacity:0.49803922;"
+         offset="0.27381214"
+         id="stop12" />
+      <stop
+         style="stop-color:#c9c9c9;stop-opacity:0;"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient4"
+       x1="57.543751"
+       y1="101.16562"
+       x2="151.47"
+       y2="101.16562"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.76200221,0,0,0.73181578,0.16674853,4.7636086)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient14"
+       id="linearGradient9"
+       x1="67.753105"
+       y1="135.50623"
+       x2="67.753105"
+       y2="1.1929114e-05"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,1.0057885,-0.01979021,-4.8713786)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8"
+       id="linearGradient10"
+       gradientUnits="userSpaceOnUse"
+       x1="67.753105"
+       y1="1.1929114e-05"
+       x2="67.753105"
+       y2="135.50623"
+       gradientTransform="matrix(1,0,0,1.0057885,-0.01978357,3.5344998)" />
+  </defs>
+  <g
+     inkscape:label="backdrop"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <ellipse
+       style="fill:url(#linearGradient10);fill-opacity:1;stroke-width:7.1566;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="path8-4"
+       cx="67.73333"
+       cy="71.67981"
+       rx="59.956871"
+       ry="60.303932"
+       inkscape:label="shadow" />
+    <ellipse
+       style="fill:url(#linearGradient9);fill-opacity:1;stroke-width:7.1566;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       id="path8"
+       cx="67.73333"
+       cy="63.273933"
+       rx="59.956871"
+       ry="60.303932"
+       inkscape:label="background" />
+    <path
+       style="fill:#333333;fill-opacity:1;stroke:url(#linearGradient4);stroke-width:8.30617;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="M 44.015218,113.16659 93.848047,65.307833 115.58723,44.42985 Z"
+       id="path3"
+       sodipodi:nodetypes="cccc"
+       inkscape:label="decoration" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="title"
+     transform="translate(0,-1.8194269)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:27.5167px;font-family:Sans;-inkscape-font-specification:'Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e6e6e6;fill-opacity:1;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="25.410282"
+       y="88.357498"
+       id="text12"
+       inkscape:label="tock"><tspan
+         sodipodi:role="line"
+         id="tspan12"
+         style="stroke-width:10"
+         x="25.410282"
+         y="88.357498">TOCK</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.5167px;font-family:Cantarell;-inkscape-font-specification:'Cantarell, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#e6e6e6;fill-opacity:1;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="25.410282"
+       y="61.862133"
+       id="text12-9"
+       inkscape:label="tick"><tspan
+         sodipodi:role="line"
+         id="tspan12-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:27.51670098px;font-family:Cantarell;-inkscape-font-specification:'Cantarell, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:10"
+         x="25.410282"
+         y="61.862133">TICK</tspan></text>
+  </g>
+</svg>

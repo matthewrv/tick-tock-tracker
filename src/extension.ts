@@ -1,10 +1,10 @@
 import * as vscode from "vscode";
 
-const timerStorageKey = "time-tracker.timeSpent";
+const timerStorageKey = "tick-tock-tracker.timeSpent";
 
-const pauseCommandId = "time-tracker.pauseTimer";
-const resumeCommandId = "time-tracker.resumeTimer";
-const resetCommandId = "time-tracker.resetTimer";
+const pauseCommandId = "tick-tock-tracker.pauseTimer";
+const resumeCommandId = "tick-tock-tracker.resumeTimer";
+const resetCommandId = "tick-tock-tracker.resetTimer";
 
 const resumeTooltip = "Click to resume time tracking";
 const pauseTooltip = "Click to pause time tracking";

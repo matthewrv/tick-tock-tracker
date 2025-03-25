@@ -1,6 +1,6 @@
 {
-  "name": "time-tracker",
-  "displayName": "Time Tracker",
+  "name": "tick-tock-tracker",
+  "displayName": "Tick Tock",
   "description": "Tracks time spent in a workspace",
   "version": "0.0.1",
   "engines": {
@@ -9,6 +9,7 @@
   "categories": [
     "Other"
   ],
+  "keywords": ["time", "tracker"],
   "activationEvents": [
     "onStartupFinished"
   ],
@@ -16,16 +17,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "time-tracker.pauseTimer",
-        "title": "Time Tracker: Pause timer"
+        "command": "tick-tock-tracker.pauseTimer",
+        "title": "Tick Tock: Pause timer"
       },
       {
-        "command": "time-tracker.resumeTimer",
-        "title": "Time Tracker: Resume timer"
+        "command": "tick-tock-tracker.resumeTimer",
+        "title": "Tick Tock: Resume timer"
       },
       {
-        "command": "time-tracker.resetTimer",
-        "title": "Time Tracker: Reset timer"
+        "command": "tick-tock-tracker.resetTimer",
+        "title": "Tick Tock: Reset timer"
       }
     ]
   },
@@ -47,5 +48,17 @@
     "typescript": "^5.7.3",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1"
-  }
+  },
+  "icon": "images/icon.png",
+  "pricing": "Free",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthewrv/tick-tock-tracker/issues",
+    "email": "sean@contoso.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthewrv/tick-tock-tracker.git"
+  },
+  "homepage": "https://github.com/matthewrv/tick-tock-tracker"
 }

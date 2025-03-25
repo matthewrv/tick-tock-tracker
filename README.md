@@ -1,6 +1,6 @@
-# Tick Track – Simple Time Tracker for Visual Studio Code
+# Tick Tock – Simple Time Tracker for Visual Studio Code
 
-**Tick Track** is a lightweight time tracking extension that helps you measure productivity by automatically recording time spent in each workspace. Know exactly how much time your projects require.
+**Tick Tock** is a lightweight time tracking extension that helps you measure productivity by automatically recording time spent in each workspace. Know exactly how much time your projects require.
 
 ## Features
 
@@ -15,15 +15,15 @@ Automatic time tracking starts when you open a workspace:
 - **Status bar timer** shows elapsed time
 - **Single-click control** – pause/resume directly from the status bar
 
-![Status bar timer](docs/images/status-bar-item.gif)
+![Status bar timer](images/status-bar-item.gif)
 
 All commands are also available via Command Palette (<kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>):
 
 | Command                    | Action                               |
 | -------------------------- | ------------------------------------ |
-| `Tick Track: Resume timer` | Resumes paused tracking              |
-| `Tick Track: Pause timer`  | Temporarily stops time recording     |
-| `Tick Track: Reset timer`  | Clears current timer |
+| `Tick Tock: Resume timer` | Resumes paused tracking              |
+| `Tick Tock: Pause timer`  | Temporarily stops time recording     |
+| `Tick Tock: Reset timer`  | Clears current timer |
 
 > ⚠️ **Note:** Timer reset cannot be undone.
 
