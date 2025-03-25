@@ -10,7 +10,7 @@
   "categories": [
     "Other"
   ],
-  "keywords": ["time", "tracker"],
+  "keywords": ["time", "tracker", "time tracker"],
   "activationEvents": [
     "onStartupFinished"
   ],
