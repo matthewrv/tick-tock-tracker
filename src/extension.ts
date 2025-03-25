@@ -1,70 +1,123 @@
 import * as vscode from "vscode";
 
-let TimerStatusBarItem: vscode.StatusBarItem;
-
 const timerStorageKey = "time-tracker.timeSpent";
 
 const pauseCommandId = "time-tracker.pauseTimer";
 const resumeCommandId = "time-tracker.resumeTimer";
+const resetCommandId = "time-tracker.resetTimer";
 
 const resumeTooltip = "Click to resume time tracking";
 const pauseTooltip = "Click to pause time tracking";
 
+const refreshTick = 1000; // [ms]
+
 export function activate(context: vscode.ExtensionContext) {
-  const activatedAt = new Date();
-  const previouslySpent = context.workspaceState.get<number>(timerStorageKey);
-  const timer = new WorkspaceTimer(activatedAt, previouslySpent);
-
-  const pauseTimer = vscode.commands.registerCommand(pauseCommandId, () => {
-    timer.pause();
-    TimerStatusBarItem.command = resumeCommandId;
-    TimerStatusBarItem.tooltip = resumeTooltip;
-    TimerStatusBarItem.color = new vscode.ThemeColor(
-      "statusBarItem.warningForeground"
-    );
-    TimerStatusBarItem.backgroundColor = new vscode.ThemeColor(
-      "statusBarItem.warningBackground"
-    );
-  });
-  context.subscriptions.push(pauseTimer);
-
-  const resumeTimer = vscode.commands.registerCommand(resumeCommandId, () => {
-    timer.resume();
-    TimerStatusBarItem.command = pauseCommandId;
-    TimerStatusBarItem.tooltip = pauseTooltip;
-    TimerStatusBarItem.color = undefined;
-    TimerStatusBarItem.backgroundColor = undefined;
-  });
-  context.subscriptions.push(resumeTimer);
-
-  TimerStatusBarItem = vscode.window.createStatusBarItem(
+  const statusBarItem = vscode.window.createStatusBarItem(
     vscode.StatusBarAlignment.Right,
     100
   );
-  context.subscriptions.push(TimerStatusBarItem);
+  context.subscriptions.push(statusBarItem);
 
-  TimerStatusBarItem.command = pauseCommandId;
-  TimerStatusBarItem.tooltip = pauseTooltip;
-  TimerStatusBarItem.show();
+  const integration = new VSCodeIntegration(
+    context.workspaceState,
+    statusBarItem
+  );
 
-  setInterval(() => {
-    const timeSpent = timer.timeSpent;
-    TimerStatusBarItem.text = `$(timeline-view-icon) ${formatTimeSpent(
-      timeSpent
-    )}`;
-    context.workspaceState.update(timerStorageKey, timeSpent);
-  }, 1000);
+  const pauseTimer = vscode.commands.registerCommand(
+    pauseCommandId,
+    integration.pauseTimer,
+    integration
+  );
+  context.subscriptions.push(pauseTimer);
+
+  const resumeTimer = vscode.commands.registerCommand(
+    resumeCommandId,
+    integration.resumeTimer,
+    integration
+  );
+  context.subscriptions.push(resumeTimer);
+
+  const resetTimer = vscode.commands.registerCommand(
+    resetCommandId,
+    integration.resetTimer,
+    integration
+  );
+  context.subscriptions.push(resetTimer);
 }
 
-// This method is called when your extension is deactivated
+// This method is called when extension is deactivated
 export function deactivate() {}
+
+class VSCodeIntegration {
+  #workspaceState: vscode.Memento;
+  #statusBarItem: vscode.StatusBarItem;
+  #timer: WorkspaceTimer;
+  #task: NodeJS.Timeout;
+
+  constructor(
+    workspaceState: vscode.Memento,
+    statusBarItem: vscode.StatusBarItem
+  ) {
+    this.#workspaceState = workspaceState;
+
+    this.#statusBarItem = statusBarItem;
+    this.#statusBarItem.command = pauseCommandId;
+    this.#statusBarItem.tooltip = pauseTooltip;
+    this.#statusBarItem.show();
+
+    const previouslySpent = workspaceState.get<number>(timerStorageKey);
+    this.#timer = new WorkspaceTimer(previouslySpent);
+
+    this.#task = setInterval(() => this.#updateStatusBarText(), refreshTick);
+  }
+
+  #updateStatusBarText() {
+    const timeSpent = this.#timer.timeSpent;
+    const icon = this.#timer.isPaused ? "run" : "clock";
+    this.#statusBarItem.text = `$(${icon}) ${formatTimeSpent(timeSpent)}`;
+    this.#workspaceState.update(timerStorageKey, timeSpent);
+  }
+
+  pauseTimer() {
+    this.#timer.pause();
+    this.#statusBarItem.command = resumeCommandId;
+    this.#statusBarItem.tooltip = resumeTooltip;
+    this.#statusBarItem.color = new vscode.ThemeColor(
+      "statusBarItem.warningForeground"
+    );
+    this.#statusBarItem.backgroundColor = new vscode.ThemeColor(
+      "statusBarItem.warningBackground"
+    );
+
+    this.#updateStatusBarText(); // immediately update view
+  }
+
+  resumeTimer() {
+    this.#timer.resume();
+    this.#statusBarItem.command = pauseCommandId;
+    this.#statusBarItem.tooltip = pauseTooltip;
+    this.#statusBarItem.color = undefined;
+    this.#statusBarItem.backgroundColor = undefined;
+
+    this.#updateStatusBarText(); // immediately update view
+  }
+
+  resetTimer() {
+    clearInterval(this.#task); // avoid race condition
+
+    this.#timer.reset();
+    this.#updateStatusBarText(); // immedeatly update view
+
+    this.#task = setInterval(() => this.#updateStatusBarText(), refreshTick);
+  }
+}
 
 class WorkspaceTimer {
   #countFrom?: number;
   #timeSpent: number;
 
-  constructor(activationTime: Date, timeSpent?: number) {
-    this.#countFrom = activationTime.getTime();
+  constructor(timeSpent?: number) {
+    this.#countFrom = Date.now();
     this.#timeSpent = timeSpent || 0;
   }
 
@@ -90,10 +143,17 @@ class WorkspaceTimer {
   resume() {
     this.#countFrom = Date.now();
   }
+
+  reset() {
+    if (this.#countFrom) {
+      this.#countFrom = Date.now();
+    }
+    this.#timeSpent = 0;
+  }
 }
 
 function formatTimeSpent(timeSpent: number): string {
-  const dividers = [1000, 60, 60];
+  const dividers = [1000, 60, 60]; // ms, s, m
 
   let remainder = timeSpent;
   let timeSpentSplit = Array<number>();
@@ -109,9 +169,6 @@ function formatTimeSpent(timeSpent: number): string {
     minimumIntegerDigits: 2,
     maximumFractionDigits: 0,
   }).format;
-
-  console.log("Milliseconds: %d", timeSpent);
-  console.log(timeSpentSplit);
 
   return `${format(h)}h ${format(m)}m ${format(s)}s`;
 }

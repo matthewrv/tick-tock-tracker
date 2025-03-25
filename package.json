@@ -22,6 +22,10 @@
       {
         "command": "time-tracker.resumeTimer",
         "title": "Time Tracker: Resume timer"
+      },
+      {
+        "command": "time-tracker.resetTimer",
+        "title": "Time Tracker: Reset timer"
       }
     ]
   },
