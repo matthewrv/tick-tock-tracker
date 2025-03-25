@@ -15,7 +15,7 @@ Automatic time tracking starts when you open a workspace:
 - **Status bar timer** shows elapsed time
 - **Single-click control** – pause/resume directly from the status bar
 
-![Status bar timer](images/status-bar-item.gif)
+![Status bar timer](images/demo/status-bar-item.gif)
 
 All commands are also available via Command Palette (<kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>):
 
