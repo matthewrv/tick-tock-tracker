@@ -1,71 +1,42 @@
-# time-tracker README
+# Tick Track – Simple Time Tracker for Visual Studio Code
 
-This is the README for your extension "time-tracker". After writing up a brief description, we recommend including the following sections.
+**Tick Track** is a lightweight time tracking extension that helps you measure productivity by automatically recording time spent in each workspace. Know exactly how much time your projects require.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+✅ **Workspace-Specific Tracking** – Independent timers for each VSCode workspace  
+✅ **Lightweight Operation** – Runs efficiently without impacting performance  
+✅ **Minimalist Interface** – Clean implementation with zero configuration
 
-For example if there is an image subfolder under your extension project workspace:
+### How It Works
 
-\!\[feature X\]\(images/feature-x.png\)
+Automatic time tracking starts when you open a workspace:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Status bar timer** shows elapsed time
+- **Single-click control** – pause/resume directly from the status bar
 
-## Requirements
+![Status bar timer](docs/images/status-bar-item.gif)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+All commands are also available via Command Palette (<kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>):
+
+| Command                    | Action                               |
+| -------------------------- | ------------------------------------ |
+| `Tick Track: Resume timer` | Resumes paused tracking              |
+| `Tick Track: Pause timer`  | Temporarily stops time recording     |
+| `Tick Track: Reset timer`  | Clears current timer |
+
+> ⚠️ **Note:** Timer reset cannot be undone.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+_Currently no configurable settings – designed to work out-of-the-box._
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
 
-### 1.0.0
+Initial release featuring:
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- Automatic workspace time tracking
+- Status bar controls
+- Basic command palette integration
