@@ -3,6 +3,7 @@
   "displayName": "Tick Tock",
   "description": "Tracks time spent in a workspace",
   "version": "0.0.1",
+  "publisher": "FlexKode",
   "engines": {
     "vscode": "^1.98.0"
   },
